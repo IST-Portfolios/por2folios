@@ -10,3 +10,12 @@ Development of the Platform, considering:
 - [Modules for Presentation and Retrieval of documents](https://github.com/IST-Portfolios/por2folios/milestone/1)  
 - [Selectors (by category, type, Promoter, names, etc.)](https://github.com/IST-Portfolios/por2folios/milestone/1) 
 - [Rating forum](https://github.com/IST-Portfolios/por2folios/milestone/1) 
+
+## Development Environment Setup
+- Install [VirtualBox]
+- Install [Vagrant]
+- Install [git]
+
+[git]: <https://git-scm.com/>
+[Vagrant]: <https://www.vagrantup.com/>
+[VirtualBox]: <https://www.virtualbox.org/>
