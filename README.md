@@ -12,10 +12,32 @@ Development of the Platform, considering:
 - [Rating forum](https://github.com/IST-Portfolios/por2folios/milestone/1) 
 
 ## Development Environment Setup
+
 - Install [VirtualBox]
 - Install [Vagrant]
 - Install [git]
 
+(If you are using Windows consider using the [suggestion](#windows-suggestion) below)
+
+### Windows Suggestion
+Install [Chocolatey] (a Packet Manager for Microsoft Windows) and then use it to install the needed software.
+
+#### git:
+```sh
+C:\> choco install git
+```
+
+#### VirtualBox:
+```sh
+C:\> choco install virtualbox
+```
+
+#### Vagrant:
+```sh
+C:\> choco install vagrant
+```
+
+[Chocolatey]: <https://chocolatey.org/>
 [git]: <https://git-scm.com/>
 [Vagrant]: <https://www.vagrantup.com/>
 [VirtualBox]: <https://www.virtualbox.org/>
