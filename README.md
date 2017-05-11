@@ -11,6 +11,12 @@ Development of the Platform, considering:
 - [Selectors (by category, type, Promoter, names, etc.)](https://github.com/IST-Portfolios/por2folios/milestone/1) 
 - [Rating forum](https://github.com/IST-Portfolios/por2folios/milestone/1) 
 
+# Table of contents
+
+- [Development Environment Setup](#development-environment-setup)
+- [Server Setup](#server-setup)
+- [TODO](#todo)
+
 ## Development Environment Setup
 
 - Install [VirtualBox]
@@ -89,6 +95,7 @@ Following the example in the step 5, the mappins you should add are:
 ```
 #### 7. DONE!
 Now that everything is set up, you should be able to go to the Dashboard (if instaled on step 3) in <http://vvv.dev>, or to the website you created using the given URL (in the above example <http://por2folio.dev>).
+
 ### Windows Suggestion
 Install [Chocolatey] (a Packet Manager for Microsoft Windows) and then use it to install the needed software.
 To install Chocolatey open the the Windows Command Prompt as Administrator and insert:
@@ -110,9 +117,60 @@ C:\> choco install virtualbox
 ```sh
 C:\> choco install vagrant
 ```
+## Server Setup
 
+#### 1. Install Ubuntu Server on the server
+First of all, install Ubuntu Server on the server. You can download it [here].
+
+#### 2. Install Wordpress on the server
+You can install manually (if you choose this option install it and jump to step 3) or using a script. If you want to install with the script you can do it this way:
+#### 2.1 Download the script
+Insert the following command in the server terminal:
+```sh
+wget -O installwp.sh goo.gl/iBP6mm
+```
+#### 2.2. Edit the script
+Edit the first block of variables, replacing the usernames, passwords, etc., with the ones you want.
+```sh
+nano installwp.sh
+```
+#### 2.3. Run the script
+The script will install nginx, PHP, MySQL and Wordpress.
+```sh
+sh installwp.sh
+```
+By the end of the script's execution you should be able to see Wordpress installed on the domain you inserted in the script in the previous step.
+
+#### 3. Get Github repository content
+
+
+## TODO
+
+### Development Environment
+- Test syncing with Github
+- Test plugin to get the database from the production server
+
+### Development Server
+- Set up the server
+- Test syncing with Github
+- Test plugin to get the database from the production server
+
+### Production Server
+- Set up the server
+- Install plugin to migrate and backup the database
+- Test syncing with Github (master branch)
+- Test Webhook
+
+### README.MD
+- In Development Environment Setup section
+  - Add Github sync steps
+- In Server Setup section
+  - Add Github sync steps
+  - Add creation of webhook to auto pull content from github when new content is pushed to the main branch steps
+  
 [Chocolatey]: <https://chocolatey.org/>
 [git]: <https://git-scm.com/>
+[here]: <https://www.ubuntu.com/download/server>
 [Vagrant]: <https://www.vagrantup.com/>
 [Variable VVV]: <https://github.com/bradp/vv>
 [VirtualBox]: <https://www.virtualbox.org/>
