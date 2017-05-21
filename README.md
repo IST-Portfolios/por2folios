@@ -23,17 +23,45 @@ Development of the Platform, considering:
 - Install [Vagrant]
 - Install [git]
 
-(If you are using Windows consider using the [suggestion](#windows-suggestion) below)
+If you are using macOS you can install these programs using homebrew:
+```sh
+brew cask install virtualbox
+brew cask install vagrant
+brew install git
+```
+
+If you are using Linux (Debian-based distros like Ubuntu) you can install these programs using apt-get:
+```sh
+sudo apt-get install virtualbox
+sudo apt-get install vagrant
+sudo apt-get install git
+```
+
+If you are using Windows consider using the [suggestion](#windows-suggestion) below.
 
 #### 1. Install [VVV (Varying Vagrant Vagrants)]
 ```sh
 git clone https://github.com/Varying-Vagrant-Vagrants/VVV.git
 ```
 #### 2. Install [Variable VVV]
+##### Windows
 ```sh
 git clone https://github.com/bradp/vv.git
 ```
 After clone, add the folder to the system path.
+##### MacOS
+If you are using macOS you can install Variable VVV using homebrew:
+```sh
+brew install bradp/vv/vv
+```
+##### Linux
+```sh
+git clone https://github.com/bradp/vv.git
+```
+After clone, go to the folder where you cloned vv into and copy vv executable to /usr/local/bin:
+```sh
+sudo cp vv /usr/local/bin
+```
 #### 3. Install [VVV-Dashboard] (optional)
 Clone the repository to the VVV/www/default directory (the VVV directory is the one created on the first step).
 ```sh
@@ -45,6 +73,10 @@ cp dashboard/dashboard-custom.php .
 Go to you VVV/ directory, and do the command:
 ```sh
 vagrant up
+```
+After launching the virtual machine you can access the VM through ssh:
+```sh
+vagrant ssh
 ```
 #### 5. Create website
 Using the terminal on Linux or the Git Bash on Windows insert this command:
@@ -119,29 +151,26 @@ C:\> choco install vagrant
 ```
 ## Server Setup
 
-#### 1. Install Ubuntu Server on the server
-First of all, install Ubuntu Server on the server. You can download it [here].
-
-#### 2. Install Wordpress on the server
-You can install manually (if you choose this option install it and jump to step 3) or using a script. If you want to install with the script you can do it this way:
-#### 2.1 Download the script
+#### 1. Install Wordpress on the server
+You can install manually (if you choose this option install it and jump to step 2) or using a script (if the Server OS is Ubuntu Server). If you want to install with the script you can do it this way:
+#### 1.1 Download the script
 Insert the following command in the server terminal:
 ```sh
 wget -O installwp.sh goo.gl/iBP6mm
 ```
-#### 2.2. Edit the script
+#### 1.2. Edit the script
 Edit the first block of variables, replacing the usernames, passwords, etc., with the ones you want.
 ```sh
 nano installwp.sh
 ```
-#### 2.3. Run the script
+#### 1.3. Run the script
 The script will install nginx, PHP, MySQL and Wordpress.
 ```sh
 sh installwp.sh
 ```
 By the end of the script's execution you should be able to see Wordpress installed on the domain you inserted in the script in the previous step.
 
-#### 3. Get Github repository content
+#### 2. Get Github repository content
 
 
 ## TODO
