@@ -116,7 +116,7 @@ Add to the file 'hosts' the mapping of the IP adresses to host names.
 192.168.50.4  build.wordpress-develop.dev
 192.168.50.4  <URL selected in the step 5>
 ```
-Following the example in the step 5, the mappins you should add are:
+Following the example in the step 5, the mappings you should add are:
 ```sh
 192.168.50.4  vvv
 192.168.50.4  vvv.dev
@@ -125,9 +125,37 @@ Following the example in the step 5, the mappins you should add are:
 192.168.50.4  build.wordpress-develop.dev
 192.168.50.4  por2folio.dev
 ```
-#### 7. DONE!
+#### 7. Sync with Github
+##### 7.1. Create a new branch from the Produciton Server version
+If you want to start developing a new feature using the current Production Server version:
+First go to the 'wp-content' directory of the website you created using vv and:
+```sh
+rm -rf
+```
+Now that you deleted the default 'wp-content' folder, get 'wp-content' used on the Production Server:
+```sh
+git clone git@github.com:IST-Portfolios/por2folios.git .
+git checkout -b <new_branch_name>
+git push origin <branch_name>
+```
+##### 7.2. Continue developing from an already created branch
+First go to the 'wp-content' directory of the website you created using vv and:
+```sh
+rm -rf
+```
+Now that you deleted the default content of the 'wp-content' folder, get 'wp-content' used on the desired branch:
+```sh
+git clone -b <branch_name> git@github.com:IST-Portfolios/por2folios.git .
+```
+#### 8. Sync Database
+#### 9. DONE!
 Now that everything is set up, you should be able to go to the Dashboard (if instaled on step 3) in <http://vvv.dev>, or to the website you created using the given URL (in the above example <http://por2folio.dev>).
 
+#### NOTES:
+To keep the information up to date with Github, go to the wp-content folder and:
+```sh
+git pull
+```
 ### Windows Suggestion
 Install [Chocolatey] (a Packet Manager for Microsoft Windows) and then use it to install the needed software.
 To install Chocolatey open the the Windows Command Prompt as Administrator and insert:
@@ -153,26 +181,41 @@ C:\> choco install vagrant
 
 #### 1. Install Wordpress on the server
 You can install manually (if you choose this option install it and jump to step 2) or using a script (if the Server OS is Ubuntu Server). If you want to install with the script you can do it this way:
-#### 1.1 Download the script
+##### 1.1. Download the script
 Insert the following command in the server terminal:
 ```sh
 wget -O installwp.sh goo.gl/iBP6mm
 ```
-#### 1.2. Edit the script
+##### 1.2. Edit the script
 Edit the first block of variables, replacing the usernames, passwords, etc., with the ones you want.
 ```sh
 nano installwp.sh
 ```
-#### 1.3. Run the script
+##### 1.3. Run the script
 The script will install nginx, PHP, MySQL and Wordpress.
 ```sh
 sh installwp.sh
 ```
 By the end of the script's execution you should be able to see Wordpress installed on the domain you inserted in the script in the previous step.
-
 #### 2. Get Github repository content
-
-
+##### 2.1. Development Server
+First go to the 'wp-content' directory of the website and:
+```sh
+rm -rf
+```
+Now that you deleted the default content of the 'wp-content' folder, get 'wp-content' used on the desired branch:
+```sh
+git clone -b <branch_name> git@github.com:IST-Portfolios/por2folios.git .
+```
+##### 2.2. Production server
+First go to the 'wp-content' directory of the website and:
+```sh
+rm -rf
+```
+Now that you deleted the default 'wp-content' folder, get 'wp-content' used on the Production Server:
+```sh
+git clone git@github.com:IST-Portfolios/por2folios.git .
+```
 ## TODO
 
 ### Development Environment
@@ -192,9 +235,9 @@ By the end of the script's execution you should be able to see Wordpress install
 
 ### README.MD
 - In Development Environment Setup section
-  - Add Github sync steps
+  - Add Database sync steps
 - In Server Setup section
-  - Add Github sync steps
+  - Add Database sync steps
   - Add creation of webhook to auto pull content from github when new content is pushed to the main branch steps
   
 [Chocolatey]: <https://chocolatey.org/>
