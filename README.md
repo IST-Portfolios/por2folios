@@ -130,22 +130,22 @@ Following the example in the step 5, the mappings you should add are:
 If you want to start developing a new feature using the current Production Server version:
 First go to the 'wp-content' directory of the website you created using vv and:
 ```sh
-rm -rf
+rm -rf *
 ```
 Now that you deleted the default 'wp-content' folder, get 'wp-content' used on the Production Server:
 ```sh
-git clone git@github.com:IST-Portfolios/por2folios.git .
+git clone https://github.com/IST-Portfolios/por2folios.git .
 git checkout -b <new_branch_name>
 git push origin <branch_name>
 ```
 ##### 7.2. Continue developing from an already created branch
 First go to the 'wp-content' directory of the website you created using vv and:
 ```sh
-rm -rf
+rm -rf *
 ```
 Now that you deleted the default content of the 'wp-content' folder, get 'wp-content' used on the desired branch:
 ```sh
-git clone -b <branch_name> git@github.com:IST-Portfolios/por2folios.git .
+git clone -b <branch_name> https://github.com/IST-Portfolios/por2folios.git .
 ```
 #### 8. Sync Database
 #### 9. DONE!
@@ -205,7 +205,7 @@ rm -rf
 ```
 Now that you deleted the default content of the 'wp-content' folder, get 'wp-content' used on the desired branch:
 ```sh
-git clone -b <branch_name> git@github.com:IST-Portfolios/por2folios.git .
+git clone -b <branch_name> https://github.com/IST-Portfolios/por2folios.git .
 ```
 ##### 2.2. Production server
 First go to the 'wp-content' directory of the website and:
@@ -214,7 +214,7 @@ rm -rf
 ```
 Now that you deleted the default 'wp-content' folder, get 'wp-content' used on the Production Server:
 ```sh
-git clone git@github.com:IST-Portfolios/por2folios.git .
+git clone https://github.com/IST-Portfolios/por2folios.git .
 ```
 ## TODO
 
