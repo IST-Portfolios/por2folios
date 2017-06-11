@@ -148,6 +148,8 @@ Now that you deleted the default content of the 'wp-content' folder, get 'wp-con
 git clone -b <branch_name> https://github.com/IST-Portfolios/por2folios.git .
 ```
 #### 8. Sync Database
+You can sync your database with the one in the production server using WP Sync DB plugin (already installed).
+More information of the tool and it works check the [git page].
 #### 9. DONE!
 Now that everything is set up, you should be able to go to the Dashboard (if instaled on step 3) in <http://vvv.dev>, or to the website you created using the given URL (in the above example <http://por2folio.dev>).
 
@@ -201,7 +203,7 @@ By the end of the script's execution you should be able to see Wordpress install
 ##### 2.1. Development Server
 First go to the 'wp-content' directory of the website and:
 ```sh
-rm -rf
+rm -rf *
 ```
 Now that you deleted the default content of the 'wp-content' folder, get 'wp-content' used on the desired branch:
 ```sh
@@ -210,12 +212,14 @@ git clone -b <branch_name> https://github.com/IST-Portfolios/por2folios.git .
 ##### 2.2. Production server
 First go to the 'wp-content' directory of the website and:
 ```sh
-rm -rf
+rm -rf *
 ```
 Now that you deleted the default 'wp-content' folder, get 'wp-content' used on the Production Server:
 ```sh
 git clone https://github.com/IST-Portfolios/por2folios.git .
 ```
+You can sync your database with the one in the production server using WP Sync DB plugin (already installed).
+More information of the tool and it works check the [git page].
 ## TODO
 
 ### Development Environment
@@ -229,19 +233,12 @@ git clone https://github.com/IST-Portfolios/por2folios.git .
 
 ### Production Server
 - Set up the server
-- Install plugin to migrate and backup the database
+- Test plugin to migrate and backup the database
 - Test syncing with Github (master branch)
-- Test Webhook
-
-### README.MD
-- In Development Environment Setup section
-  - Add Database sync steps
-- In Server Setup section
-  - Add Database sync steps
-  - Add creation of webhook to auto pull content from github when new content is pushed to the main branch steps
   
 [Chocolatey]: <https://chocolatey.org/>
 [git]: <https://git-scm.com/>
+[git page]: <https://github.com/wp-sync-db/wp-sync-db>
 [here]: <https://www.ubuntu.com/download/server>
 [Vagrant]: <https://www.vagrantup.com/>
 [Variable VVV]: <https://github.com/bradp/vv>
