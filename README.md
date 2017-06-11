@@ -220,21 +220,6 @@ git clone https://github.com/IST-Portfolios/por2folios.git .
 ```
 You can sync your database with the one in the production server using WP Sync DB plugin (already installed).
 More information of the tool and it works check the [git page].
-## TODO
-
-### Development Environment
-- Test syncing with Github
-- Test plugin to get the database from the production server
-
-### Development Server
-- Set up the server
-- Test syncing with Github
-- Test plugin to get the database from the production server
-
-### Production Server
-- Set up the server
-- Test plugin to migrate and backup the database
-- Test syncing with Github (master branch)
   
 [Chocolatey]: <https://chocolatey.org/>
 [git]: <https://git-scm.com/>
